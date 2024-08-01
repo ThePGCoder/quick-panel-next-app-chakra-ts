@@ -1,4 +1,5 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, StyleFunctionProps } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
 
 export const theme = extendTheme({
   fonts: {
@@ -7,5 +8,12 @@ export const theme = extendTheme({
   },
   config: {
     initialColorMode: "light",
+  },
+  styles: {
+    global: (props: StyleFunctionProps) => ({
+      body: {
+        bg: mode("white","#1a202c")(props),
+      }
+    })
   },
 });

@@ -1,9 +1,30 @@
 // app/providers.tsx
-'use client'
+"use client";
 
-import { theme } from '@/lib/styles/theme'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ActiveRouteContext } from "@/lib/hooks/activeRouteContext";
+import { theme } from "@/lib/styles/theme";
+import { ChakraProvider } from "@chakra-ui/react";
+import React, { createContext, ReactNode, useEffect, useState } from "react";
 
-export function Providers({ children }: { children: React.ReactNode }) {
-  return <ChakraProvider theme={theme}>{children}</ChakraProvider>
+interface ProvidersProps {
+  children: ReactNode;
 }
+
+const Providers: React.FC<ProvidersProps> = ({ children }) => {
+  const [activeRoute, setActiveRoute] = useState<any>();
+  const changeActiveRoute = (route: string | null) => {
+    setActiveRoute(route);
+  };
+  useEffect(() => {
+    setActiveRoute(localStorage.getItem("route"));
+  }, [])
+  return (
+    <ChakraProvider theme={theme}>
+      <ActiveRouteContext.Provider value={{ activeRoute, changeActiveRoute }}>
+        {children}
+      </ActiveRouteContext.Provider>
+    </ChakraProvider>
+  );
+};
+
+export default Providers;
