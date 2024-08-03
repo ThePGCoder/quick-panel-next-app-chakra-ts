@@ -32,13 +32,9 @@ const NavItem: React.FC<NavItemProps> = ({ item, toggleDrawer }) => {
         p={2}
         _hover={{ boxShadow: useColorModeValue(lightShadow, darkShadow) }}
         borderRadius={4}
-        bg={
-          useColorModeValue(activeRoute === item.title ? lightGradient : "", activeRoute === item.title ? darkGradient : "")
-        }
-        color={
-          useColorModeValue(activeRoute === item.title ? "white" : "black", activeRoute != item.title ? "white" : "black")
-          
-        }
+        bg={activeRoute === item.title ? lightGradient : ""}
+        _dark={{bg: activeRoute === item.title ? darkGradient : "", color: activeRoute != item.title ? "white" : "black"}}
+        color={activeRoute === item.title ? "white" : "black"}
         onClick={() => {
           item.dropdown && setExpanded(!expanded);
           !item.dropdown ? router.push(item.link) : {};
@@ -48,13 +44,11 @@ const NavItem: React.FC<NavItemProps> = ({ item, toggleDrawer }) => {
         }}>
     <HStack justifyContent="space-between">
           <HStack>
-            <Icon
+            <Box color={activeRoute === item.title ? "" : primary} _dark={activeRoute === item.title ? "" : secondary}><Icon
               icon={item.icon}
               height={20}
-              color={
-                useColorModeValue(activeRoute === item.title ? "" : primary, activeRoute === item.title ? "" : secondary)
-              }
-            />
+              
+            /></Box>
             <Box>{item.title}</Box>
           </HStack>
 
@@ -79,13 +73,9 @@ const NavItem: React.FC<NavItemProps> = ({ item, toggleDrawer }) => {
             mr={6}
             fontSize="sm"
             _hover={{ boxShadow: useColorModeValue(lightShadow, darkShadow) }}
-            bg={
-              useColorModeValue(activeRoute === item.title ? lightGradient : "", activeRoute === item.title ? darkGradient : "")
-            }
-            color={
-              useColorModeValue(activeRoute === item.title ? "white" : "black", activeRoute != item.title ? "white" : "black")
-              
-            }
+            bg={activeRoute === item.title ? lightGradient : ""}
+        _dark={{bg: activeRoute === item.title ? darkGradient : "", color: activeRoute != item.title ? "white" : "black"}}
+        color={activeRoute === item.title ? "white" : "black"}
             onClick={() => {
               setExpanded(!expanded);
               !item.dropdown ? router.push(item.link) : {};
@@ -96,13 +86,11 @@ const NavItem: React.FC<NavItemProps> = ({ item, toggleDrawer }) => {
           >
             <HStack justifyContent="space-between">
               <HStack>
-                <Icon
-                  icon={item.icon}
-                  height={20}
-                  color={
-                    useColorModeValue(activeRoute === item.title ? "" : primary, activeRoute === item.title ? "" : secondary)
-                  }
-                />
+              <Box color={activeRoute === item.title ? "" : primary} _dark={activeRoute === item.title ? "" : secondary}><Icon
+              icon={item.icon}
+              height={20}
+              
+            /></Box>
                 <Box>{item.title}</Box>
               </HStack>
               {item.dropdown && <Icon icon="mdi:chevron-down" height={20} />}

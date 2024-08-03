@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { ReactNode } from "react";
 import Header from "./layout/Header";
@@ -18,7 +18,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Header toggleDrawer={onOpen} />
       <MobileDrawer isOpen={isOpen} onClose={onClose} toggleDrawer={onClose} />
       <Sidebar />
-      <Box ml={{ base: "none", sm: "none", md: 320 }} transition={"0.2s ease"} background={useColorModeValue("radial-gradient(circle, #ffffff 0%, transparent 66%)","radial-gradient(circle, #3b4863 0%, transparent 66%)")}>
+      <Box
+        ml={{ base: "none", sm: "none", md: 320 }}
+        transition={"0.2s ease"}
+        background={useColorModeValue(
+          "radial-gradient(circle, #ffffff 0%, transparent 66%)",
+          "radial-gradient(circle, #3b4863 0%, transparent 66%)"
+        )}
+        height="calc(100vh - 100px)"
+        p={4}
+      >
         {children}
       </Box>
       <Footer />
