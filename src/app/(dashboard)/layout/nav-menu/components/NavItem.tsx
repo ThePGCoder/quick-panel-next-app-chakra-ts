@@ -30,7 +30,10 @@ const NavItem: React.FC<NavItemProps> = ({ item, toggleDrawer }) => {
     <>
     <Box w={290}
         p={2}
-        _hover={{ boxShadow: useColorModeValue(lightShadow, darkShadow) }}
+        _hover={{
+          boxShadow: lightShadow,
+          _dark: {boxShadow: darkShadow}
+        }}
         borderRadius={4}
         bg={activeRoute === item.title ? lightGradient : ""}
         _dark={{bg: activeRoute === item.title ? darkGradient : "", color: activeRoute != item.title ? "white" : "black"}}
@@ -72,7 +75,11 @@ const NavItem: React.FC<NavItemProps> = ({ item, toggleDrawer }) => {
             ml={6}
             mr={6}
             fontSize="sm"
-            _hover={{ boxShadow: useColorModeValue(lightShadow, darkShadow) }}
+            _hover={{
+              boxShadow: lightShadow,
+              _dark: {boxShadow: darkShadow}
+            }}
+            
             bg={activeRoute === item.title ? lightGradient : ""}
         _dark={{bg: activeRoute === item.title ? darkGradient : "", color: activeRoute != item.title ? "white" : "black"}}
         color={activeRoute === item.title ? "white" : "black"}

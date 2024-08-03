@@ -70,7 +70,9 @@ const Login: React.FC<LoginProps> = () => {
           </InputGroup>
           <Center>
             <Text fontSize="sm">
-              <Link color={useColorModeValue(primary, secondary)}>Forgot Password?</Link>
+              <Link color={useColorModeValue(primary, secondary)}>
+                Forgot Password?
+              </Link>
             </Text>
           </Center>
           <Center>
@@ -82,7 +84,13 @@ const Login: React.FC<LoginProps> = () => {
           </CustomButton>
           <Center>
             <Text fontSize="sm">
-              Don't have an account? <Link color={useColorModeValue(primary, secondary)} href="/register">Register</Link>
+              Don&apos;t have an account?{" "}
+              <Link
+                color={useColorModeValue(primary, secondary)}
+                href="/register"
+              >
+                Register
+              </Link>
             </Text>
           </Center>
         </Stack>
