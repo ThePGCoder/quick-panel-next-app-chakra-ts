@@ -28,18 +28,16 @@ const NavItem: React.FC<NavItemProps> = ({ item, toggleDrawer }) => {
   const [expanded, setExpanded] = useState<boolean>(false);
   return (
     <>
-      <Box
-        w={290}
+    <Box w={290}
         p={2}
         _hover={{ boxShadow: useColorModeValue(lightShadow, darkShadow) }}
         borderRadius={4}
         bg={
-          activeRoute === item.title
-            ? useColorModeValue(lightGradient, darkGradient)
-            : ""
+          useColorModeValue(activeRoute === item.title ? lightGradient : "", activeRoute === item.title ? darkGradient : "")
         }
         color={
-          activeRoute === item.title ? useColorModeValue("white", " black") : ""
+          useColorModeValue(activeRoute === item.title ? "white" : "black", activeRoute != item.title ? "white" : "black")
+          
         }
         onClick={() => {
           item.dropdown && setExpanded(!expanded);
@@ -47,17 +45,14 @@ const NavItem: React.FC<NavItemProps> = ({ item, toggleDrawer }) => {
           !item.dropdown ? changeActiveRoute(item.title) : {};
           localStorage.setItem("route", item.title);
           !item.dropdown && toggleDrawer && toggleDrawer();
-        }}
-      >
-        <HStack justifyContent="space-between">
+        }}>
+    <HStack justifyContent="space-between">
           <HStack>
             <Icon
               icon={item.icon}
               height={20}
               color={
-                activeRoute === item.title
-                  ? ""
-                  : useColorModeValue(primary, secondary)
+                useColorModeValue(activeRoute === item.title ? "" : primary, activeRoute === item.title ? "" : secondary)
               }
             />
             <Box>{item.title}</Box>
@@ -70,8 +65,7 @@ const NavItem: React.FC<NavItemProps> = ({ item, toggleDrawer }) => {
             </Box>
           )}
         </HStack>
-      </Box>
-
+    </Box>
       <Collapse startingHeight={1} in={expanded}>
         {item.subMenu?.map((item: any, index: any) => (
           <Box
@@ -86,14 +80,11 @@ const NavItem: React.FC<NavItemProps> = ({ item, toggleDrawer }) => {
             fontSize="sm"
             _hover={{ boxShadow: useColorModeValue(lightShadow, darkShadow) }}
             bg={
-              activeRoute === item.title
-                ? useColorModeValue(lightGradient, darkGradient)
-                : ""
+              useColorModeValue(activeRoute === item.title ? lightGradient : "", activeRoute === item.title ? darkGradient : "")
             }
             color={
-              activeRoute === item.title
-                ? useColorModeValue("white", " black")
-                : ""
+              useColorModeValue(activeRoute === item.title ? "white" : "black", activeRoute != item.title ? "white" : "black")
+              
             }
             onClick={() => {
               setExpanded(!expanded);
@@ -109,9 +100,7 @@ const NavItem: React.FC<NavItemProps> = ({ item, toggleDrawer }) => {
                   icon={item.icon}
                   height={20}
                   color={
-                    activeRoute === item.title
-                      ? ""
-                      : useColorModeValue(primary, secondary)
+                    useColorModeValue(activeRoute === item.title ? "" : primary, activeRoute === item.title ? "" : secondary)
                   }
                 />
                 <Box>{item.title}</Box>

@@ -3,7 +3,9 @@
 import React, { ReactNode } from "react";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
+import Middle from "@/lib/components/Middle";
+import FadeIn from "@/lib/components/FadeIn";
 
 interface LayoutProps {
   children: ReactNode;
@@ -12,15 +14,20 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <Header />
-      <Flex
-        justifyContent="center"
-        alignItems="center"
-        height="calc(100vh - 100px)"
-      >
-        {children}
-      </Flex>
-      <Footer />
+      <FadeIn>
+        <Box
+          backgroundImage={useColorModeValue(
+            "linear-gradient(rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0.66)),url(/bg.png)",
+            "linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)),url(/bg.png)"
+          )}
+          backgroundSize="cover"
+          height="100vh"
+        >
+          <Header />
+          <Middle>{children}</Middle>
+          <Footer />
+        </Box>
+      </FadeIn>
     </>
   );
 };

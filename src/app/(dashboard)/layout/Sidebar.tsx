@@ -1,4 +1,10 @@
-import { Box, useColorModeValue, Image } from "@chakra-ui/react";
+import {
+  Box,
+  useColorModeValue,
+  Image,
+  Heading,
+  Divider,
+} from "@chakra-ui/react";
 import React from "react";
 import NavMenu from "./nav-menu/NavMenu";
 import { darkBorder, darkGradient, lightBorder } from "@/lib/styles/constants";
@@ -20,9 +26,9 @@ const Sidebar: React.FC<SidebarProps> = () => {
         flexDirection="column"
       >
         <Box pt={6} pb={6}>
-          LOGO
+          <Heading size="md">LOGO</Heading>
         </Box>
-
+        <Divider width="90%" />
         <NavMenu />
       </Box>
     </>

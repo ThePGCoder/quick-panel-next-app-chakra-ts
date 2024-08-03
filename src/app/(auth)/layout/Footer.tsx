@@ -6,7 +6,7 @@ interface FooterProps {}
 const Footer: React.FC<FooterProps> = () => {
   return (
     <>
-      <Flex position="fixed" bottom={0} justifyContent="center" w="100%">
+      <Flex position="fixed" bottom={0} justifyContent="center" w="100%" h="35px">
         Footer
       </Flex>
     </>

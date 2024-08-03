@@ -1,6 +1,7 @@
 export const primary = "#3182ce";
 export const secondary = "#63b3ed";
 export const darkBG = "#1a202c";
+export const lightSurface = "#ffffff";
 export const darkSurface = "#2d3748";
 export const customGradient = "linear-gradient(#38B2AC, #2C7A7B)";
 

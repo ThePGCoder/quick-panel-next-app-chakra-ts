@@ -1,6 +1,6 @@
 import ThemeToggle from "@/lib/components/ThemeToggle";
 import { lightBorder, darkBorder } from "@/lib/styles/constants";
-import { Box, IconButton, useColorModeValue } from "@chakra-ui/react";
+import { Box, IconButton, Heading, useColorModeValue } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 
 interface HeaderProps {
@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ toggleDrawer }) => {
           display={{ base: "flex", sm: "flex", md: "none" }}
         >
           
-          LOGO
+          <Heading size="sm">LOGO</Heading>
         
         </Box>
         

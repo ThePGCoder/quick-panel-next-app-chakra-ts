@@ -1,23 +1,27 @@
 import { Button, useColorModeValue } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
+import { darkGradient, darkShadow, lightGradient, lightShadow } from "../styles/constants";
 
 interface CustomButtonProps {
   children: ReactNode;
   width?: string;
-  action?: any;
+  onClick?: any;
 }
 
-const CustomButton: React.FC<CustomButtonProps> = ({ children, width, action }) => {
-    
-    return (
+const CustomButton: React.FC<CustomButtonProps> = ({
+  children,
+  width,
+  onClick,
+}) => {
+  return (
     <>
       <Button
-      onClick={action}
-      width={width}
-        bg="linear-gradient(#38B2AC, #2C7A7B)"
-        color="white"
-        boxShadow={useColorModeValue("2px 2px 5px #646464","")}
-        _hover={{bg: "linear-gradient(#38B2AC, #81E6D9)", color: "black"}}
+        onClick={onClick}
+        width={width}
+        bg={useColorModeValue(lightGradient, darkGradient)}
+        color={useColorModeValue("white", "black")}
+        _hover={{ boxShadow: useColorModeValue(lightShadow, darkShadow) }}
+        _active={{ bg: useColorModeValue(lightGradient, darkGradient)}}
       >
         {children}
       </Button>
