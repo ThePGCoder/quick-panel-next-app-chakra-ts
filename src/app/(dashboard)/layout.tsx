@@ -3,7 +3,7 @@
 import React, { ReactNode } from "react";
 import Header from "./layout/Header";
 import MobileDrawer from "./layout/Drawer";
-import { Box, useDisclosure } from "@chakra-ui/react";
+import { Box, useDisclosure, useColorModeValue } from "@chakra-ui/react";
 import Footer from "./layout/Footer";
 import Sidebar from "./layout/Sidebar";
 
@@ -18,7 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Header toggleDrawer={onOpen} />
       <MobileDrawer isOpen={isOpen} onClose={onClose} toggleDrawer={onClose} />
       <Sidebar />
-      <Box ml={{ base: "none", sm: "none", md: 320 }} transition={"0.2s ease"} >
+      <Box ml={{ base: "none", sm: "none", md: 320 }} transition={"0.2s ease"} background={useColorModeValue("radial-gradient(circle, #ffffff 0%, transparent 66%)","radial-gradient(circle, #3b4863 0%, transparent 66%)")}>
         {children}
       </Box>
       <Footer />

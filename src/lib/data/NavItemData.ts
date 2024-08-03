@@ -1,18 +1,18 @@
 export const navItemData: NavItemProps[] = [
     {
         title: "Home",
-        icon: "ri:home-line",
+        icon: "ri:home-fill",
         link: "/home",
     },
     {
         title: "About",
-        icon: "ri:information-line",
+        icon: "ri:information-fill",
         link: "/about",
     },
     
     {
         title: "Charts",
-        icon: "ri:folder-chart-line",
+        icon: "ri:folder-chart-fill",
         
         dropdown: true,
         subMenu: [{title: "Income", icon: "ri:exchange-dollar-fill", link: "/income"},
@@ -21,12 +21,12 @@ export const navItemData: NavItemProps[] = [
     },
     {
         title: "Profile",
-        icon: "ri:account-circle-line",
+        icon: "ri:account-circle-fill",
         link: "/profile",
     },
     {
         title: "Logout",
-        icon: "ri:logout-box-r-line",
+        icon: "ri:logout-box-r-fill",
         link: "/login",
     },
     

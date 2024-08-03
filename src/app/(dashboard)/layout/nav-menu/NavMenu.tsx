@@ -1,5 +1,5 @@
 import React from "react";
-import { navItemData } from "./data/NavItemData";
+import { navItemData } from "../../../../lib/data/NavItemData";
 import NavItem from "./components/NavItem";
 import { Box } from "@chakra-ui/react";
 
