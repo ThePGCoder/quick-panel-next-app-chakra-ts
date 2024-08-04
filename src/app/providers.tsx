@@ -19,7 +19,7 @@ const Providers: React.FC<ProvidersProps> = ({ children }) => {
   const router = useRouter();
   useEffect(() => {
     setActiveRoute(localStorage.getItem("route"));
-   router.push(localStorage.getItem("route"));
+   router.push("/" + localStorage.getItem("route"));
   }, [])
   return (
     <ChakraProvider theme={theme}>
