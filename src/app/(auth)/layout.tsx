@@ -14,7 +14,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <FadeIn>
+      
         <Box
           backgroundImage={useColorModeValue(
             "linear-gradient(rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0.66)),url(/bg.png)",
@@ -24,10 +24,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           height="100vh"
         >
           <Header />
-          <Middle>{children}</Middle>
+          <FadeIn><Middle>{children}</Middle></FadeIn>
           <Footer />
         </Box>
-      </FadeIn>
+      
     </>
   );
 };

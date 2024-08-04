@@ -16,7 +16,7 @@ const Register: React.FC<RegisterProps> = () => {
     const router = useRouter();
   return (
     <>
-      <Box width="85%">
+      <Box width={{xs: "85%", sm: "85%", md: "350px", lg: "350px"}}>
         <CustomCard>
           <Stack spacing={4}>
             <Center>
