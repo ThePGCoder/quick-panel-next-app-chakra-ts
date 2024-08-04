@@ -4,6 +4,7 @@
 import { ActiveRouteContext } from "@/lib/hooks/activeRouteContext";
 import { theme } from "@/lib/styles/theme";
 import { ChakraProvider } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 import React, { createContext, ReactNode, useEffect, useState } from "react";
 
 interface ProvidersProps {
@@ -15,8 +16,10 @@ const Providers: React.FC<ProvidersProps> = ({ children }) => {
   const changeActiveRoute = (route: string | null) => {
     setActiveRoute(route);
   };
+  const router = useRouter();
   useEffect(() => {
     setActiveRoute(localStorage.getItem("route"));
+   router.push(localStorage.getItem("route"));
   }, [])
   return (
     <ChakraProvider theme={theme}>

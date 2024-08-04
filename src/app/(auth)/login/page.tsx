@@ -32,7 +32,7 @@ const Login: React.FC<LoginProps> = () => {
   const router = useRouter();
   return (
     <>
-      <Box width="90%">
+      <Box width="85%">
         <CustomCard>
           <Stack spacing={4}>
             <Center>
