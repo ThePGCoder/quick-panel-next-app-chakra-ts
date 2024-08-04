@@ -16,7 +16,7 @@ const Providers: React.FC<ProvidersProps> = ({ children }) => {
   const changeActiveRoute = (route: string | null) => {
     setActiveRoute(route);
   };
-  const router = useRouter();
+  
   useEffect(() => {
     setActiveRoute(localStorage.getItem("route"));
    
