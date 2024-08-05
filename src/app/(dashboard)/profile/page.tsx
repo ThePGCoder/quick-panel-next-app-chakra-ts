@@ -2,14 +2,19 @@
 
 import CustomCard from '@/lib/components/CustomCard';
 import Middle from '@/lib/components/Middle';
+import { ActiveRouteContext } from '@/lib/hooks/activeRouteContext';
 import { Image, Avatar, Box, Heading, HStack, Text, useColorModeValue, VStack } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 
 interface ProfileProps {
 }
 
 const Profile: React.FC<ProfileProps> = () => {
-   
+  const { changeActiveRoute } = useContext(ActiveRouteContext);
+  
+  useEffect(() => {
+    changeActiveRoute("Profile");
+  }, [])
         return (
           <>
             <Middle>

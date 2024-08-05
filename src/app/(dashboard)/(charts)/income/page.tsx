@@ -1,8 +1,9 @@
 "use client";
 
 import { incomeData } from "@/lib/data/incomeData";
+import { ActiveRouteContext } from "@/lib/hooks/activeRouteContext";
 import { Heading, Center } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import {
   ResponsiveContainer,
   AreaChart,
@@ -16,6 +17,11 @@ import {
 interface IncomeProps {}
 
 const Income: React.FC<IncomeProps> = () => {
+  const { changeActiveRoute } = useContext(ActiveRouteContext);
+  
+  useEffect(() => {
+    changeActiveRoute("Income");
+  }, [])
   return (
     <>
       <Center>

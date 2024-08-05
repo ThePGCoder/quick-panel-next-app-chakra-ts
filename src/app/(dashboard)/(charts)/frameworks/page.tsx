@@ -1,8 +1,9 @@
 "use client";
 
 import { developerData } from "@/lib/data/developerData";
+import { ActiveRouteContext } from "@/lib/hooks/activeRouteContext";
 import { Box, Center, Heading } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import {
   Radar,
   RadarChart,
@@ -15,6 +16,12 @@ import {
 interface FrameworksProps {}
 
 const Frameworks: React.FC<FrameworksProps> = () => {
+  const { changeActiveRoute } = useContext(ActiveRouteContext);
+  
+  useEffect(() => {
+    changeActiveRoute("Frameworks");
+  }, [])
+  
   return (
     <>
       <Center>

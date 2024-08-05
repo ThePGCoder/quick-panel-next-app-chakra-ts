@@ -17,10 +17,6 @@ const Providers: React.FC<ProvidersProps> = ({ children }) => {
     setActiveRoute(route);
   };
   
-  useEffect(() => {
-    setActiveRoute(localStorage.getItem("route"));
-   
-  }, [])
   return (
     <ChakraProvider theme={theme}>
       <ActiveRouteContext.Provider value={{ activeRoute, changeActiveRoute }}>

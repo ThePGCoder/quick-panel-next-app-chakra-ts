@@ -41,8 +41,7 @@ const NavItem: React.FC<NavItemProps> = ({ item, toggleDrawer }) => {
         onClick={() => {
           item.dropdown && setExpanded(!expanded);
           !item.dropdown ? router.push(item.link) : {};
-          !item.dropdown ? changeActiveRoute(item.title) : {};
-          localStorage.setItem("route", item.title);
+          
           !item.dropdown && toggleDrawer && toggleDrawer();
         }}>
     <HStack justifyContent="space-between">
@@ -86,8 +85,7 @@ const NavItem: React.FC<NavItemProps> = ({ item, toggleDrawer }) => {
             onClick={() => {
               setExpanded(!expanded);
               !item.dropdown ? router.push(item.link) : {};
-              changeActiveRoute(item.title);
-              localStorage.setItem("route", item.title);
+              
               !item.dropdown && toggleDrawer && toggleDrawer();
             }}
           >

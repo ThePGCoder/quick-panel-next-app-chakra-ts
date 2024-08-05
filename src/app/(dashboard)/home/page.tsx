@@ -7,10 +7,12 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = () => {
-    const { activeRoute, changeActiveRoute } = useContext(ActiveRouteContext);
-    useEffect(() => {
-        changeActiveRoute("Home");
-    },[])
+    const { changeActiveRoute } = useContext(ActiveRouteContext);
+  
+  useEffect(() => {
+    changeActiveRoute("Home");
+  }, [])
+
     return (
         <>
             Home
